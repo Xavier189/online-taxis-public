@@ -24,7 +24,7 @@ public class NumberCodeController {
         System.out.println(matchRandom);
         // 截取小数点前的位数作为验证码
         int resultInt = (int)matchRandom;
-        System.out.println(resultInt);
+        System.out.println("generator src code:" + resultInt);
 
 
         // {
