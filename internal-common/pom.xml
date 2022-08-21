@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>api-passenger</artifactId>
+    <artifactId>internal-common</artifactId>
     <packaging>jar</packaging>
 
-    <name>api-passenger</name>
+    <name>internal-common</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -23,17 +23,6 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-       <!--   Nacos 服务发现者依赖     -->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-            <version>2021.1</version>
         </dependency>
     </dependencies>
 </project>

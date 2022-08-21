@@ -1,0 +1,4 @@
+com\mashibing\internalcommon\dto\ResponseResult.class
+com\mashibing\internalcommon\constant\CommonStatusEnum.class
+com\mashibing\internalcommon\responese\NumberCodeResponse.class
+com\mashibing\App.class
