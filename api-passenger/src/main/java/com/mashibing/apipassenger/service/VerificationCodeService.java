@@ -4,6 +4,7 @@ package com.mashibing.apipassenger.service;
 import com.mashibing.apipassenger.remote.ServiceVefificationcodeClient;
 import com.mashibing.internalcommon.dto.ResponseResult;
 import com.mashibing.internalcommon.responese.NumberCodeResponse;
+import com.mashibing.internalcommon.responese.TokenResponse;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -25,7 +26,11 @@ public class VerificationCodeService {
     private StringRedisTemplate stringRedisTemplate;
 
 
-
+    /**
+     * 生成验证码 *
+     * @param passengerPhone 手机号
+     * @return
+     */
     public ResponseResult generatorCode(String passengerPhone){
         // 调用验证码服务，获取验证码
         System.out.println("调用验证码服务，获取验证码");
@@ -42,9 +47,6 @@ public class VerificationCodeService {
         // 存入Redis  设置两分钟过期
         stringRedisTemplate.opsForValue().set(key,numberCode+"",2, TimeUnit.MINUTES);
 
-
-
-
         // 处理返回{
         //    code:    number;
         //    message: string;
@@ -60,9 +62,31 @@ public class VerificationCodeService {
 
         return ResponseResult.success("");
 
-
-
     }
 
 
+    /**
+     * 校验验证码 *
+     * @param passengerPhone 手机号
+     * @param verificationCode 验证码
+     * @return
+     */
+    public ResponseResult checkCode(String passengerPhone,String verificationCode){
+
+        // 根据手机号去redis去读验证码
+
+        // 校验验证码
+
+        // 判断原来是否有用户，并进行处理
+
+        //颁发令牌
+
+        TokenResponse tokenResponse = new TokenResponse();
+        tokenResponse.setToken("token value");
+        return ResponseResult.success(tokenResponse);
+
+    }
+
 }
+
+
