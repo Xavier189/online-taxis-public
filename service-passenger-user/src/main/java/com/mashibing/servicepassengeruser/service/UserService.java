@@ -31,6 +31,7 @@ public class UserService {
         System.out.println(passengerUsers.size()==0?"无记录":passengerUsers.get(0).getPassengerName());
 
         // 判断用户信息是否存在
+        // 如果不存在，执行插入
         if (passengerUsers.size() == 0){
             // 如果不存在，插入用户信息
             PassengerUser passengerUser = new PassengerUser();
@@ -49,7 +50,6 @@ public class UserService {
         }
 
 
-        // 如果不存在，执行插入
 
         System.out.println("user service");
         return ResponseResult.success();
