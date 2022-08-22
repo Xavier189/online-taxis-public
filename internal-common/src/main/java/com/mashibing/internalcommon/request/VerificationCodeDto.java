@@ -6,8 +6,14 @@ import lombok.Data;
 public class VerificationCodeDto {
 
 
+    /**
+     * 手机号 *
+     */
     private String passengerPhone;
 
+    /**
+     * 验证码 *
+     */
     private String verificationCode;
 
 
