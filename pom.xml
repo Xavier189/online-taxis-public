@@ -50,6 +50,12 @@
       <classifier>jdk15</classifier>
     </dependency>
 
+    <dependency>
+      <groupId>com.mashibing</groupId>
+      <artifactId>internal-common</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+
   </dependencies>
 
 <!--  用作版本约束 父项目确定alibaba cloud和spring cloud对应版本-->
