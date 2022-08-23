@@ -34,31 +34,12 @@ public class JwtInterceptor implements HandlerInterceptor {
 
         String token = request.getHeader("Authorization");
         // 解析token
-        TokenResult tokenResult = null;
+        TokenResult tokenResult = JwtUtils.checkToken(token);
 
-        try {
-            tokenResult = JwtUtils.parseToken(token);
 
-        } catch (SignatureVerificationException e){
-            // 签名错误异常
-            resultString = "token sign error";
-            result = false;
-        } catch (TokenExpiredException e){
-            // token过期异常
-            resultString = "token time out";
-            result = false;
-        } catch (AlgorithmMismatchException e){
-            // 算法异常
-            resultString = "token AlgorithmMismatchException";
-            result = false;
-        }
-        catch (Exception e) {
-            resultString = "token invalid";
-            result = false;
-        }
 
         if (tokenResult == null){
-            resultString = "token invalid";
+            resultString = "access token invalid";
             result = false;
         } else {
             // 拼接key
@@ -67,20 +48,12 @@ public class JwtInterceptor implements HandlerInterceptor {
             String tokenKey = RedisPrefixUtils.generatorTokenKey(phone, identity, TokenConstant.ACCESS_TOKEN_TYPE);
             // 从Redis中取出token
             String tokenRedis = stringRedisTemplate.opsForValue().get(tokenKey);
-            if (StringUtils.isBlank(tokenRedis)){
-                resultString = "token invalid";
+            if ((StringUtils.isBlank(tokenRedis)) || (!tokenRedis.trim().equals(token.trim()))){
+                resultString = "access token invalid";
                 result = false;
-            } else {
-                // 比较
-                if (!tokenRedis.trim().equals(token.trim())){
-                    resultString = "token invalid";
-                    result = false;
-                }
             }
 
         }
-
-
 
 
         if (!result){

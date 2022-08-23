@@ -3,7 +3,7 @@ package com.mashibing.internalcommon.request;
 import lombok.Data;
 
 @Data
-public class VerificationCodeDto {
+public class VerificationCodeDTO {
 
 
     /**

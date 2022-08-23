@@ -7,12 +7,11 @@ import com.mashibing.internalcommon.constant.CommonStatusEnum;
 import com.mashibing.internalcommon.constant.IdentityConstant;
 import com.mashibing.internalcommon.constant.TokenConstant;
 import com.mashibing.internalcommon.dto.ResponseResult;
-import com.mashibing.internalcommon.request.VerificationCodeDto;
+import com.mashibing.internalcommon.request.VerificationCodeDTO;
 import com.mashibing.internalcommon.responese.NumberCodeResponse;
 import com.mashibing.internalcommon.responese.TokenResponse;
 import com.mashibing.internalcommon.utils.JwtUtils;
 import com.mashibing.internalcommon.utils.RedisPrefixUtils;
-import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -104,7 +103,7 @@ public class VerificationCodeService {
         }
 
 
-        VerificationCodeDto verificationCodeDto = new VerificationCodeDto();
+        VerificationCodeDTO verificationCodeDto = new VerificationCodeDTO();
         verificationCodeDto.setPassengerPhone(passengerPhone);
 
         // 判断原来是否有用户，并进行处理
