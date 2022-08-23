@@ -24,13 +24,17 @@ public class JwtUtils {
     // 假设暂定1是乘客 2是司机
     private static final String JWT_KEY_IDENTITY = "identity";
 
+    // token类型
+    private static final String JWT_TOKEN_TYPE = "tokenType";
+
 
     // 生成token
-    public static String generatorToken(String passengerPhone,String identity){
+    public static String generatorToken(String passengerPhone,String identity,String tokenType){
 
         Map<String,String> map = new HashMap<>();
         map.put(JWT_KEY_PHONE,passengerPhone);
         map.put(JWT_KEY_IDENTITY,identity);
+        map.put(JWT_TOKEN_TYPE,tokenType);
 
 
         // token过期时间
@@ -48,7 +52,7 @@ public class JwtUtils {
         });
 
         // 整合过期时间
-        builder.withExpiresAt(date);
+//        builder.withExpiresAt(date);
 
         // 生成Token
         String sign = builder.sign(Algorithm.HMAC256(SIGN));
@@ -67,7 +71,7 @@ public class JwtUtils {
 
         Map<String,String> map = new HashMap<>();
 
-        String token = generatorToken("17805595987","1");
+        String token = generatorToken("18113830901","1","access");
 
         System.out.println("生成的token是:"+token);
 
@@ -82,9 +86,9 @@ public class JwtUtils {
         DecodedJWT verify = JWT.require(Algorithm.HMAC256(SIGN)).build().verify(token);
 
         // 反解析出来的手机号
-        String phone = verify.getClaim(JWT_KEY_PHONE).toString();
+        String phone = verify.getClaim(JWT_KEY_PHONE).asString();
         // 反解析出来的身份标识
-        String identity = verify.getClaim(JWT_KEY_IDENTITY).toString();
+        String identity = verify.getClaim(JWT_KEY_IDENTITY).asString();
 
         TokenResult tokenResult = new TokenResult();
         tokenResult.setIdentity(identity);

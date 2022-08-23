@@ -32,6 +32,7 @@ public class TestController {
      * 不需要token也能访问*
      * @return
      */
+    @GetMapping("/noauthTest")
     public ResponseResult noauthTest(){
         return ResponseResult.success("noauth test");
 
