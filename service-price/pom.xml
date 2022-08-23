@@ -48,6 +48,11 @@
             <!--            <version></version>-->
         </dependency>
 
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-httpclient</artifactId>
+        </dependency>
+
 
         <dependency>
             <groupId>com.mashibing</groupId>

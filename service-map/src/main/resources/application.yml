@@ -9,6 +9,6 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
 
-
+# 自定义的 key：value
 amap:
   key: 58dfbde5b0ec087c93d5caa71ee8d08a
