@@ -91,20 +91,22 @@ public class DistrictService {
 
 
 
-        return ResponseResult.success();
+        return ResponseResult.success("");
 
     }
 
 
 
     public void insertDicDistrict(String name,String parentAddressCode,String addressCode,String level){
-        // 插入数据库
+        // 数据库对象
         DicDistrict dicDistrict = new DicDistrict();
         dicDistrict.setAddressName(name);
         dicDistrict.setAddressCode(addressCode);
         int levelInt = generateLevel(level);
         dicDistrict.setLevel(levelInt);
         dicDistrict.setParentAddressCode(parentAddressCode);
+
+        // 插入数据库
         dicDistrictMapper.insert(dicDistrict);
     }
 
