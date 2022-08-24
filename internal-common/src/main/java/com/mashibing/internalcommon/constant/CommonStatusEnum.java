@@ -27,6 +27,11 @@ public enum CommonStatusEnum {
      */
     PRICE_RULE_EMPTY(1300,"计价规则不存在"),
 
+    /**
+     * *
+     */
+    MAP_DISTRICT_ERROR(1400,"请求地图错误"),
+
 
     /**
      * 成功
