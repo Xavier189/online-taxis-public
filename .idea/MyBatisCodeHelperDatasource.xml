@@ -28,6 +28,30 @@
         </option>
         <option name="tableGenerateConfigs">
           <map>
+            <entry key="service-driver-user:car">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="Car" />
+                  <option name="moduleName" value="internal-common" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="service-driver-user:driver_car_binding_relations">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="DriverCarBindingRelations" />
+                  <option name="moduleName" value="internal-common" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
             <entry key="service-driver-user:driver_user">
               <value>
                 <TableGenerateConfig>

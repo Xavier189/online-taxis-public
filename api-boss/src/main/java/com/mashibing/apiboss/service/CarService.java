@@ -1,39 +1,26 @@
 package com.mashibing.apiboss.service;
 
+
 import com.mashibing.apiboss.remote.ServiceDriverUserClient;
 import com.mashibing.internalcommon.dto.Car;
+import com.mashibing.internalcommon.dto.DriverCarBindingRelations;
 import com.mashibing.internalcommon.dto.DriverUser;
 import com.mashibing.internalcommon.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
-public class DriverUserService {
-
-
+public class CarService {
 
     @Autowired
     private ServiceDriverUserClient serviceDriverUserClient;
 
 
-    public ResponseResult addDriverUser(DriverUser driverUser){
+    public ResponseResult addCar(Car car){
 
-
-
-
-        return serviceDriverUserClient.addDriverUser(driverUser);
-    }
-
-
-
-    public ResponseResult updateDriverUser(DriverUser driverUser){
-
-        return serviceDriverUserClient.updateDriverUser(driverUser);
+        return serviceDriverUserClient.addCar(car);
 
     }
-
-
 
 
 
