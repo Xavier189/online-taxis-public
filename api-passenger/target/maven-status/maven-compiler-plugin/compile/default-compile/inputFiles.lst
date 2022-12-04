@@ -1,0 +1,16 @@
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/remote/ServicePassengerUserClient.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/service/UserService.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/service/TokenService.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/controller/VerificationCodeController.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/service/VerificationCodeService.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/ApiPassengerApplication.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/App.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/controller/TestController.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/controller/UserController.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/interceptor/InterceptorConfig.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/service/ForecastPriceService.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/interceptor/JwtInterceptor.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/remote/ServicePriceClient.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/controller/ForecastPriceController.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/controller/TokenController.java
+/Users/xiaowei/WorkSpace/ideaWorkSpace/online-taxis-public/api-passenger/src/main/java/com/mashibing/apipassenger/remote/ServiceVefificationcodeClient.java
