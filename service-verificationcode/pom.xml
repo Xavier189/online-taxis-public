@@ -5,17 +5,15 @@
     <parent>
         <artifactId>online-taxis-public</artifactId>
         <groupId>com.mashibing</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
-    <groupId>com.mashibing</groupId>
+
     <artifactId>service-verificationcode</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>service-verificationcode</name>
-    <description>service-verificationcode</description>
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
+    <version>1.0.0</version>
+
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -28,27 +26,18 @@
         </dependency>
 
         <!--   Nacos 服务发现者依赖     -->
+        <!--    子 POM 引用依赖时无需指定版本，Maven 会自动继承 BOM 中的版本，或者指定版本覆盖父的BOM中版本    -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-            <version>2021.1</version>
         </dependency>
-
 
         <dependency>
             <groupId>com.mashibing</groupId>
             <artifactId>internal-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
-    </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    </dependencies>
 
 </project>

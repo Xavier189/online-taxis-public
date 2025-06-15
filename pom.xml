@@ -1,94 +1,119 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mashibing</groupId>
+    <artifactId>online-taxis-public</artifactId>
+    <version>1.0.0</version>
 
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.4.2</version>
-    <relativePath/> <!-- lookup parent from repository -->
-  </parent>
+    <name>online-taxis-public</name>
+    <url>http://maven.apache.org</url>
 
-  <groupId>com.mashibing</groupId>
-  <artifactId>online-taxis-public</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>api-passenger</module>
-    <module>internal-common</module>
-      <module>service-passenger-user</module>
-      <module>service-price</module>
-    <module>service-map</module>
-      <module>service-driver-user</module>
-      <module>api-boss</module>
-      <module>api-driver</module>
-  </modules>
-  <packaging>pom</packaging>
+    <!-- 整体的项目类型  -->
+    <packaging>pom</packaging>
 
-  <name>online-taxis-public</name>
-  <url>http://maven.apache.org</url>
+    <!--  子模块声明  -->
+    <modules>
+        <module>service-verificationcode</module>
+        <module>api-passenger</module>
+        <module>internal-common</module>
+        <module>service-passenger-user</module>
+        <module>service-price</module>
+        <module>service-map</module>
+        <module>service-driver-user</module>
+        <module>api-boss</module>
+        <module>api-driver</module>
+    </modules>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <!--  全局属性  -->
+    <properties>
+        <java.version>17</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <spring-boot.version>3.5.0</spring-boot.version>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+        <mybatis-plus.version>3.5.12</mybatis-plus.version>
+        <mysql-connector.version>9.2.0</mysql-connector.version>
+    </properties>
 
-    <!-- lombok -->
-<!--    引入lombok减少get set的书写-->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.24</version>
-      <scope>compile</scope>
-    </dependency>
+    <!--  统一依赖版本 这里应该使用的是 BOM文件 而不是组件 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Boot BOM -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
-    <dependency>
-      <groupId>net.sf.json-lib</groupId>
-      <artifactId>json-lib</artifactId>
-      <version>2.4</version>
-      <classifier>jdk15</classifier>
-    </dependency>
+            <!-- Spring Cloud BOM -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2025.0.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
-<!--    JWT 官方组件-->
-    <dependency>
-      <groupId>com.auth0</groupId>
-      <artifactId>java-jwt</artifactId>
-      <version>3.14.0</version>
-    </dependency>
+            <!-- Spring Cloud Alibaba BOM -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2023.0.3.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-    <dependency>
-      <groupId>com.mashibing</groupId>
-      <artifactId>internal-common</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
-
-  </dependencies>
-
-<!--  用作版本约束 父项目确定alibaba cloud和spring cloud对应版本-->
-  <dependencyManagement>
+    <!-- 公共依赖（为所有子模块都需要的）  -->
     <dependencies>
-      <dependency>
-        <groupId>com.alibaba.cloud</groupId>
-        <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        <version>2021.1</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+        <!--   spring-boot   -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
 
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>2020.0.1</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+        <!--  Junit5 三件套    -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.13.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>5.13.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-engine</artifactId>
+            <version>1.13.1</version>
+        </dependency>
+
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.38</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
-  </dependencyManagement>
+    <!--  编译插件  -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
