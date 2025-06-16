@@ -2,10 +2,10 @@ package com.cola.apipassenger.service;
 
 
 import com.cola.apipassenger.remote.ServicePassengerUserClient;
-import com.cola.common.dto.PassengerUser;
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.dto.TokenResult;
-import com.cola.common.utils.JwtUtils;
+import com.cola.internal.dto.PassengerUser;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.dto.TokenResult;
+import com.cola.internal.utils.JwtUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
 package com.cola.serviceDriverUser.controller;
 
 
-import com.cola.common.dto.DriverCarBindingRelations;
-import com.cola.common.dto.ResponseResult;
+import com.cola.internal.dto.DriverCarBindingRelations;
+import com.cola.internal.dto.ResponseResult;
 import com.cola.serviceDriverUser.service.DriverCarBindingRelationsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -2,8 +2,8 @@ package com.cola.apipassenger.controller;
 
 
 import com.cola.apipassenger.service.ForecastPriceService;
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.request.ForecastPriceDTO;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.request.ForecastPriceDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,8 +1,8 @@
 package com.cola.apiboss.service;
 
 import com.cola.apiboss.remote.ServiceDriverUserClient;
-import com.cola.common.dto.DriverUser;
-import com.cola.common.dto.ResponseResult;
+import com.cola.internal.dto.DriverUser;
+import com.cola.internal.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

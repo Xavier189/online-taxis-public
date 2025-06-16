@@ -1,9 +1,9 @@
 package com.cola.apipassenger.remote;
 
 
-import com.cola.common.dto.PassengerUser;
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.request.VerificationCodeDTO;
+import com.cola.internal.dto.PassengerUser;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.request.VerificationCodeDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;

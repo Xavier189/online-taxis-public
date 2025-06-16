@@ -1,7 +1,7 @@
 package com.cola.serviceDriverUser.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.cola.common.dto.DriverUser;
+import com.cola.internal.dto.DriverUser;
 import org.springframework.stereotype.Repository;
 
 @Repository

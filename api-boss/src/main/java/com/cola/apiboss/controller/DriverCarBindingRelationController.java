@@ -2,8 +2,8 @@ package com.cola.apiboss.controller;
 
 
 import com.cola.apiboss.service.DriverCarBindingRelationService;
-import com.cola.common.dto.DriverCarBindingRelations;
-import com.cola.common.dto.ResponseResult;
+import com.cola.internal.dto.DriverCarBindingRelations;
+import com.cola.internal.dto.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

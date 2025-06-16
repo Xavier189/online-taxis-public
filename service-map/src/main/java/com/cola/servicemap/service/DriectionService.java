@@ -1,7 +1,7 @@
 package com.cola.servicemap.service;
 
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.responese.DirectionResponse;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.responese.DirectionResponse;
 import com.cola.servicemap.remote.MapDirectionClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
 package com.cola.apipassenger.remote;
 
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.request.ForecastPriceDTO;
-import com.cola.common.responese.ForecastPriceResponse;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.request.ForecastPriceDTO;
+import com.cola.internal.responese.ForecastPriceResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

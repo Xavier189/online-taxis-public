@@ -1,8 +1,8 @@
 package com.cola.serviceprice.controller;
 
 
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.request.ForecastPriceDTO;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.request.ForecastPriceDTO;
 import com.cola.serviceprice.service.ForecastPriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

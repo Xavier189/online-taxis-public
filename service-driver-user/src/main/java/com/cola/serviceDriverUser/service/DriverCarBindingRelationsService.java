@@ -1,9 +1,9 @@
 package com.cola.serviceDriverUser.service;
 
-import com.cola.common.constant.CommonStatusEnum;
-import com.cola.common.constant.DriverCarConstant;
-import com.cola.common.dto.DriverCarBindingRelations;
-import com.cola.common.dto.ResponseResult;
+import com.cola.internal.constant.CommonStatusEnum;
+import com.cola.internal.constant.DriverCarConstant;
+import com.cola.internal.dto.DriverCarBindingRelations;
+import com.cola.internal.dto.ResponseResult;
 import com.cola.serviceDriverUser.mapper.DriverCarBindingRelationsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,13 +1,13 @@
 package com.cola.serviceprice.service;
 
 
-import com.cola.common.constant.CommonStatusEnum;
-import com.cola.common.dto.PriceRule;
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.request.ForecastPriceDTO;
-import com.cola.common.responese.DirectionResponse;
-import com.cola.common.responese.ForecastPriceResponse;
-import com.cola.common.utils.BigDecimalUtils;
+import com.cola.internal.constant.CommonStatusEnum;
+import com.cola.internal.dto.PriceRule;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.request.ForecastPriceDTO;
+import com.cola.internal.responese.DirectionResponse;
+import com.cola.internal.responese.ForecastPriceResponse;
+import com.cola.internal.utils.BigDecimalUtils;
 import com.cola.serviceprice.mapper.PriceRuleMapper;
 import com.cola.serviceprice.remote.ServiceMapClient;
 import com.sun.javafx.collections.MappingChange;

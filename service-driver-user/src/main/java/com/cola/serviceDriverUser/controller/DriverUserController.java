@@ -1,9 +1,9 @@
 package com.cola.serviceDriverUser.controller;
 
-import com.cola.common.constant.DriverCarConstant;
-import com.cola.common.dto.DriverUser;
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.responese.DriverUserExistsResponse;
+import com.cola.internal.constant.DriverCarConstant;
+import com.cola.internal.dto.DriverUser;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.responese.DriverUserExistsResponse;
 import com.cola.serviceDriverUser.service.DriverUserService;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONObject;

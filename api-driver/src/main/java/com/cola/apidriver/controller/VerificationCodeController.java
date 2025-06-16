@@ -2,8 +2,8 @@ package com.cola.apidriver.controller;
 
 
 import com.cola.apidriver.service.VerificationCodeService;
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.request.VerificationCodeDTO;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.request.VerificationCodeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;

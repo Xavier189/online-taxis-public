@@ -1,12 +1,12 @@
 package com.cola.apipassenger.service;
 
-import com.cola.common.constant.CommonStatusEnum;
-import com.cola.common.constant.TokenConstant;
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.dto.TokenResult;
-import com.cola.common.responese.TokenResponse;
-import com.cola.common.utils.JwtUtils;
-import com.cola.common.utils.RedisPrefixUtils;
+import com.cola.internal.constant.CommonStatusEnum;
+import com.cola.internal.constant.TokenConstant;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.dto.TokenResult;
+import com.cola.internal.responese.TokenResponse;
+import com.cola.internal.utils.JwtUtils;
+import com.cola.internal.utils.RedisPrefixUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;

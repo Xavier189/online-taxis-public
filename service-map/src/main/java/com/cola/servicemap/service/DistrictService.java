@@ -1,10 +1,10 @@
 package com.cola.servicemap.service;
 
 
-import com.cola.common.constant.AmapConfigConstant;
-import com.cola.common.constant.CommonStatusEnum;
-import com.cola.common.dto.DicDistrict;
-import com.cola.common.dto.ResponseResult;
+import com.cola.internal.constant.AmapConfigConstant;
+import com.cola.internal.constant.CommonStatusEnum;
+import com.cola.internal.dto.DicDistrict;
+import com.cola.internal.dto.ResponseResult;
 import com.cola.servicemap.mapper.DicDistrictMapper;
 import com.cola.servicemap.remote.MapDicDistictClient;
 import lombok.extern.slf4j.Slf4j;

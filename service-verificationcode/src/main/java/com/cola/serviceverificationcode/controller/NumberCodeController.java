@@ -1,7 +1,7 @@
 package com.cola.serviceverificationcode.controller;
 
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.responese.NumberCodeResponse;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.responese.NumberCodeResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

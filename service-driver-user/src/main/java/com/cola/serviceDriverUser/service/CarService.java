@@ -1,8 +1,8 @@
 package com.cola.serviceDriverUser.service;
 
 
-import com.cola.common.dto.Car;
-import com.cola.common.dto.ResponseResult;
+import com.cola.internal.dto.Car;
+import com.cola.internal.dto.ResponseResult;
 import com.cola.serviceDriverUser.mapper.CarDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
 package com.cola.servicemap.remote;
 
 
-import com.cola.common.constant.AmapConfigConstant;
-import com.cola.common.responese.DirectionResponse;
+import com.cola.internal.constant.AmapConfigConstant;
+import com.cola.internal.responese.DirectionResponse;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

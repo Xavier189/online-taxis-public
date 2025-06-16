@@ -1,8 +1,8 @@
 package com.cola.servicemap.controller;
 
 
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.request.ForecastPriceDTO;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.request.ForecastPriceDTO;
 import com.cola.servicemap.service.DriectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

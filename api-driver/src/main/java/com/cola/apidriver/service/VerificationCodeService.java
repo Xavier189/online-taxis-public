@@ -3,11 +3,11 @@ package com.cola.apidriver.service;
 
 import com.cola.apidriver.remote.ServiceDriverUserClient;
 import com.cola.apidriver.remote.ServiceVerificationCodeClient;
-import com.cola.common.constant.CommonStatusEnum;
-import com.cola.common.constant.DriverCarConstant;
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.responese.DriverUserExistsResponse;
-import com.cola.common.responese.NumberCodeResponse;
+import com.cola.internal.constant.CommonStatusEnum;
+import com.cola.internal.constant.DriverCarConstant;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.responese.DriverUserExistsResponse;
+import com.cola.internal.responese.NumberCodeResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

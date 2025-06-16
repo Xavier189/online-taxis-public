@@ -2,8 +2,8 @@ package com.cola.apidriver.controller;
 
 
 import com.cola.apidriver.service.UserService;
-import com.cola.common.dto.DriverUser;
-import com.cola.common.dto.ResponseResult;
+import com.cola.internal.dto.DriverUser;
+import com.cola.internal.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;

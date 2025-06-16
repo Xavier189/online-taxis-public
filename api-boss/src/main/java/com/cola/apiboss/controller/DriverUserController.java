@@ -3,9 +3,9 @@ package com.cola.apiboss.controller;
 
 import com.cola.apiboss.service.CarService;
 import com.cola.apiboss.service.DriverUserService;
-import com.cola.common.dto.Car;
-import com.cola.common.dto.DriverUser;
-import com.cola.common.dto.ResponseResult;
+import com.cola.internal.dto.Car;
+import com.cola.internal.dto.DriverUser;
+import com.cola.internal.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;

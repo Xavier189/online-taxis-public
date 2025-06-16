@@ -2,9 +2,9 @@ package com.cola.apipassenger.service;
 
 
 import com.cola.apipassenger.remote.ServicePriceClient;
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.request.ForecastPriceDTO;
-import com.cola.common.responese.ForecastPriceResponse;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.request.ForecastPriceDTO;
+import com.cola.internal.responese.ForecastPriceResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

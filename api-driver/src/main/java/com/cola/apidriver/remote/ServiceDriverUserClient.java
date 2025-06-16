@@ -1,9 +1,9 @@
 package com.cola.apidriver.remote;
 
 
-import com.cola.common.dto.DriverUser;
-import com.cola.common.dto.ResponseResult;
-import com.cola.common.responese.DriverUserExistsResponse;
+import com.cola.internal.dto.DriverUser;
+import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.responese.DriverUserExistsResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;

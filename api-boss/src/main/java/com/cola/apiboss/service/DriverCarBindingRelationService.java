@@ -2,8 +2,8 @@ package com.cola.apiboss.service;
 
 
 import com.cola.apiboss.remote.ServiceDriverUserClient;
-import com.cola.common.dto.DriverCarBindingRelations;
-import com.cola.common.dto.ResponseResult;
+import com.cola.internal.dto.DriverCarBindingRelations;
+import com.cola.internal.dto.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
