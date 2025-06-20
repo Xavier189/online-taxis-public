@@ -1,5 +1,6 @@
 package com.cola.internal.common;
 
+import com.cola.internal.exception.ErrorStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,35 +26,53 @@ public class Response extends DTO {
      * 表示响应的错误代码
      * 用于标识具体的错误类型或状态
      */
-    private int errorCode;
+    private int code;
 
     /**
      * 表示响应中与错误相关的描述信息
      * 通常用于提供更加友好或详细的错误提示
      */
-    private String errorMessage;
+    private String message;
 
     public static Response buildSuccess() {
         Response response = new Response();
         response.setSuccess(true);
+        response.setCode(1);
+        response.setMessage("success");
         return response;
     }
 
     public static Response buildFailure(int errorCode, String errorMessage) {
         Response response = new Response();
         response.setSuccess(false);
-        response.setErrorCode(errorCode);
-        response.setErrorMessage(errorMessage);
+        response.setCode(errorCode);
+        response.setMessage(errorMessage);
         return response;
     }
+
+    public static Response buildFailure(ErrorStatus status) {
+        return buildFailure(status.getCode(), status.getMessage());
+    }
+
+//    public static Response buildFailure(int errorCode, String errorMessage, String serviceHost) {
+//        Response response = buildFailure(errorCode, errorMessage);
+//        response.setServiceHost(serviceHost);
+//        return response;
+//    }
+//
+//    public static Response buildFailure(ErrorStatus status, String serviceHost) {
+//        Response response = buildFailure(status.getCode(), status.getMessage());
+//        response.setServiceHost(serviceHost);
+//        return response;
+//    }
 
 
     @Override
     public String toString() {
         return "Response{" +
                 "success=" + success +
-                ", errorCode=" + errorCode +
-                ", errorMessage='" + errorMessage + '\'' +
+                ", errorCode=" + code +
+                ", errorMessage='" + message + '\'' +
                 '}';
     }
 }

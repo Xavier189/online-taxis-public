@@ -15,21 +15,22 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
 
-    @Autowired
-    private ServicePassengerUserClient servicePassengerUserClient;
+//    @Autowired
+//    private ServicePassengerUserClient servicePassengerUserClient;
 
     public ResponseResult gtUserByAccessToken(String accessToken){
 
         log.info("accessToken是："+ accessToken);
         // 解析accessToken
-        TokenResult tokenResult = JwtUtils.checkToken(accessToken);
+        //TokenResult tokenResult = JwtUtils.checkToken(accessToken);
+        TokenResult tokenResult = null;
         String phone = tokenResult.getPhone();
 
         log.info("手机号：" + phone);
         // 根据手机号查询用户信息
 //        VerificationCodeDto verificationCodeDto = new VerificationCodeDto();
 //        verificationCodeDto.setPassengerPhone(phone);
-        ResponseResult<PassengerUser> userByPhone = servicePassengerUserClient.getUserByPhone(phone);
+        ResponseResult<PassengerUser> userByPhone = null;
 
         // 返回用户信息
 //        PassengerUser passengerUser = new PassengerUser();

@@ -1,48 +1,38 @@
 package com.cola.apipassenger.controller;
 
-import com.cola.internal.request.VerificationCodeDTO;
 import com.cola.apipassenger.service.VerificationCodeService;
-import com.cola.internal.dto.ResponseResult;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.cola.internal.common.Response;
+import com.cola.internal.common.SingleResponse;
+import com.cola.internal.request.GroupA;
+import com.cola.internal.request.GroupB;
+import com.cola.internal.request.VerificationCodeAddCmd;
+import com.cola.internal.responese.TokenResponse;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
+@AllArgsConstructor
 public class VerificationCodeController {
-
-
-
-    @Autowired
-    VerificationCodeService verificationCodeService;
-
+    private final VerificationCodeService verificationCodeService;
 
 
     @GetMapping("/verification-code")
-    public ResponseResult verificationCode(@RequestBody VerificationCodeDTO verificationCodeDto){
-
-        String passengerPhone = verificationCodeDto.getPassengerPhone();
-        System.out.println("接收到的手机号参数是：" + passengerPhone);
-
-
-        return verificationCodeService.generatorCode(passengerPhone);
-
+    public ResponseEntity<Response> verificationCode(@Validated(GroupA.class) @RequestBody VerificationCodeAddCmd verificationRequest) {
+        verificationCodeService.generatorCode(verificationRequest.getPassengerPhone());
+        return ResponseEntity.ok(Response.buildSuccess());
     }
 
 
     @PostMapping("/verification-code-check")
-    public ResponseResult checkVerificationCode(@RequestBody VerificationCodeDTO verificationCodeDto){
-
-        String passengerPhone = verificationCodeDto.getPassengerPhone();
-        String verificationCode = verificationCodeDto.getVerificationCode();
-
-        System.out.println("手机号：" + passengerPhone + "，验证码：" + verificationCode);
-
-        return verificationCodeService.checkCode(passengerPhone,verificationCode);
-
-
+    public ResponseEntity<SingleResponse<TokenResponse>> checkVerificationCode(@Validated(GroupB.class) @RequestBody VerificationCodeAddCmd verificationRequest) {
+        SingleResponse<TokenResponse> tokenResponse = verificationCodeService.checkCode(verificationRequest.getPassengerPhone(), verificationRequest.getVerificationCode());
+        return ResponseEntity.ok(tokenResponse);
     }
-
-
 }

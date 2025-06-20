@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class ForecastPriceService {
 
-    @Autowired
-    private ServicePriceClient servicePriceClient;
+//    @Autowired
+//    private ServicePriceClient servicePriceClient;
 
     /**
      * 根据出发地和目的地的经纬度 计算出预估价格 *
@@ -37,7 +37,7 @@ public class ForecastPriceService {
         forecastPriceDTO.setDestLatitude(destLatitude);
         forecastPriceDTO.setDepLongitude(depLongitude);
         forecastPriceDTO.setDepLatitude(depLatitude);
-        ResponseResult<ForecastPriceResponse> responseResult = servicePriceClient.forecastPrice(forecastPriceDTO);
+        ResponseResult<ForecastPriceResponse> responseResult = null;
         double price = responseResult.getData().getPrice();
 
         ForecastPriceResponse forecastPriceResponse = new ForecastPriceResponse();

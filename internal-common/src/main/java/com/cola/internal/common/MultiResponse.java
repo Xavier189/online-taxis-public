@@ -34,20 +34,24 @@ public class MultiResponse<T> extends Response {
     public static MultiResponse<Void> buildSuccess() {
         MultiResponse<Void> response = new MultiResponse<>();
         response.setSuccess(true);
+        response.setCode(1);
+        response.setMessage("success");
         return response;
     }
 
     public static MultiResponse<Void> buildFailure(int errorCode, String errorMessage) {
         MultiResponse<Void> response = new MultiResponse<>();
         response.setSuccess(false);
-        response.setErrorCode(errorCode);
-        response.setErrorMessage(errorMessage);
+        response.setCode(errorCode);
+        response.setMessage(errorMessage);
         return response;
     }
 
     public static <T> MultiResponse<T> of(Collection<T> data) {
         MultiResponse<T> response = new MultiResponse<>();
         response.setSuccess(true);
+        response.setCode(1);
+        response.setMessage("success");
         response.setData(data);
         return response;
     }

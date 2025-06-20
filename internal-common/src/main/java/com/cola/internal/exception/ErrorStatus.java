@@ -10,6 +10,8 @@ import lombok.Getter;
 public enum ErrorStatus {
 
     // 2001-: 非功能性异常
+    VERIFICATION_CODE_ERROR(2001,"验证码不正确"),
+    TOKEN_ERROR(2002,"token错误"),
 
     // 3001->: 资源异常
     RESOURCE_NOT_FOUND(3001, "资源不存在"),
@@ -21,6 +23,15 @@ public enum ErrorStatus {
     RESOURCE_UNAVAILABLE(3004, "资源不可用"),
     // 3005: 资源不可用异常
     RESOURCE_INVALID(3005, "资源无效"),
+
+
+    // 4001-: 参数校验异常
+    PARAMETER_ERROR(4001, "参数校验异常"),
+
+
+    // 5001-: 服务间异常
+    VERIFICATION_CODE_CLIENT_ERROR(5001,"验证码生成服务异常"),
+
 
     // 9001-: 系统级异常
     SYSTEM_ERROR(9999, "未预期的错误，请联系系统负责人");

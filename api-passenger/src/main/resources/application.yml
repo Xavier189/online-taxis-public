@@ -1,15 +1,16 @@
 server:
   port: 8081
 
-
 spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
+        server-addr: 192.168.7.110:8848
   application:
     name: api-passenger
-  redis:
-    host: 127.0.0.1
-    port: 6379
-    database: 0
+
+# redis 配置
+redis_mode: "singleRedis"
+redis_sentinel_nodes: 192.168.60.136:6379
+redis_password: "Well,2024"
+redis_database: 0

@@ -1,12 +1,15 @@
 package com.cola.internal.responese;
 
 
-import lombok.Data;
+import com.cola.internal.common.Command;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-public class TokenResponse {
-
-
+@Getter
+@Setter
+@Builder
+public class TokenResponse extends Command {
     private String accessToken;
     private String refreshToken;
 
