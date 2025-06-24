@@ -1,49 +1,62 @@
 package com.cola.serviceverificationcode.controller;
 
-import com.cola.internal.dto.ResponseResult;
+import com.cola.internal.common.SingleResponse;
 import com.cola.internal.responese.NumberCodeResponse;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.SecureRandom;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+@Slf4j
 @RestController
 public class NumberCodeController {
 
+    // 定义验证码字符集（排除易混淆字符）
+    private static final String DIGITS = "0123456789";
+    private static final String LETTERS = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz";
 
+    private static final String ALPHANUMERIC = DIGITS + LETTERS;
+
+    private static final SecureRandom RANDOM = new SecureRandom();
 
     @GetMapping("/numberCode/{size}")
-    public ResponseResult numberCode(@PathVariable("size") int size){
-
-        System.out.println("size:" + size);
-
+    public ResponseEntity<SingleResponse<NumberCodeResponse>> numberCode(@PathVariable("size") int size) {
         // 生成验证码
-        double matchRandom = (Math.random()*9 + 1) * (Math.pow(10,size-1));
-        // 已生成5位整数含有小数数据
-        System.out.println(matchRandom);
-        // 截取小数点前的位数作为验证码
-        int resultInt = (int)matchRandom;
-        System.out.println("generator src code:" + resultInt);
+        int captchaCode = Integer.parseInt(generateNumericCaptcha(size));
+        NumberCodeResponse response = new NumberCodeResponse(captchaCode);
+        return ResponseEntity.ok(SingleResponse.of(response));
+    }
 
+    /**
+     * 生成数字验证码（纯数字）
+     *
+     * @param length 验证码长度
+     */
+    public static String generateNumericCaptcha(int length) {
+        return generateCaptcha(DIGITS, length);
+    }
 
-        // {
-        //    "code": 17,
-        //    "message": "cupidatat quis",
-        //    "data": {
-        //        "numberCode": 20
-        //    }
-        //}
-//        JSONObject result = new JSONObject();
-//        result.put("code",1);
-//        result.put("message","success");
-//        JSONObject data = new JSONObject();
-//        data.put("numberCode",resultInt);
-//        result.put("data",data);
+    /**
+     * 生成字母数字混合验证码（排除易混淆字符）
+     *
+     * @param length 验证码长度
+     */
+    public static String generateAlphanumericCaptcha(int length) {
+        return generateCaptcha(ALPHANUMERIC, length);
+    }
 
-        NumberCodeResponse response = new NumberCodeResponse();
-        response.setNumberCode(resultInt);
+    private static String generateCaptcha(String charPool, int length) {
+        if (length <= 0) throw new IllegalArgumentException("长度必须为正整数");
 
-        return ResponseResult.success(response);
-
+        return IntStream.range(0, length)
+                .map(i -> RANDOM.nextInt(charPool.length()))
+                .mapToObj(index -> String.valueOf(charPool.charAt(index)))
+                .collect(Collectors.joining());
     }
 
 }
