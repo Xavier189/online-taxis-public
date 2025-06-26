@@ -1,8 +1,7 @@
 package com.cola.apipassenger.service;
 
 
-import com.cola.apipassenger.remote.ServicePassengerUserClient;
-import com.cola.apipassenger.remote.ServiceVefificationcodeClient;
+import com.cola.apipassenger.remote.VerificationCodeClient;
 import com.cola.internal.common.SingleResponse;
 import com.cola.internal.constant.IdentityConstant;
 import com.cola.internal.constant.TokenConstant;
@@ -19,7 +18,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -27,8 +25,8 @@ import java.util.concurrent.TimeUnit;
 @AllArgsConstructor
 public class VerificationCodeService {
 
-//    private final ServiceVefificationcodeClient serviceVefificationcodeClient;
-//    private final ServicePassengerUserClient servicePassengerUserClient;
+    private final VerificationCodeClient verificationCodeClient;
+    //    private final ServicePassengerUserClient servicePassengerUserClient;
     private final StringRedisTemplate stringRedisTemplate;
 
 
@@ -40,16 +38,7 @@ public class VerificationCodeService {
      */
     public void generatorCode(String passengerPhone) {
         // 调用验证码服务，获取验证码
-//        int verificationCode = serviceVefificationcodeClient.getNumberCode(6)
-//                .map(SingleResponse::getData)
-//                .map(NumberCodeResponse::getNumberCode)
-//                .orElseThrow(() -> new SysException(ErrorStatus.VERIFICATION_CODE_CLIENT_ERROR));
-        SingleResponse<NumberCodeResponse> test = new SingleResponse<>();
-        NumberCodeResponse numberCodeResponse = new NumberCodeResponse();
-        numberCodeResponse.setNumberCode(123456);
-        test.setData(numberCodeResponse);
-
-        int verificationCode = Optional.ofNullable(test)
+        int verificationCode = verificationCodeClient.getNumberCode(6)
                 .map(SingleResponse::getData)
                 .map(NumberCodeResponse::getNumberCode)
                 .orElseThrow(() -> new SysException(ErrorStatus.VERIFICATION_CODE_CLIENT_ERROR));
@@ -83,8 +72,8 @@ public class VerificationCodeService {
 
 
         //颁发令牌
-//        String accessToken = JwtUtils.generatorToken(passengerPhone, IdentityConstant.PASSENGER_IDENTITY, TokenConstant.ACCESS_TOKEN_TYPE);
-//        String refreshToken = JwtUtils.generatorToken(passengerPhone, IdentityConstant.PASSENGER_IDENTITY, TokenConstant.REFRESH_TOKEN_TYPE);
+        //        String accessToken = JwtUtils.generatorToken(passengerPhone, IdentityConstant.PASSENGER_IDENTITY, TokenConstant.ACCESS_TOKEN_TYPE);
+        //        String refreshToken = JwtUtils.generatorToken(passengerPhone, IdentityConstant.PASSENGER_IDENTITY, TokenConstant.REFRESH_TOKEN_TYPE);
         String accessToken = "test1234";
         String refreshToken = "test5678";
         log.info("生成的accessToken，refreshToken是:{}，{}", accessToken, refreshToken);

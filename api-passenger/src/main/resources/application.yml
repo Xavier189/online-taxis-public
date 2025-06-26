@@ -11,6 +11,6 @@ spring:
 
 # redis 配置
 redis_mode: "singleRedis"
-redis_sentinel_nodes: 192.168.60.136:6379
-redis_password: "Well,2024"
+redis_sentinel_nodes: 192.168.7.110:6379
+redis_password: "xavier1234"
 redis_database: 0
